@@ -84,13 +84,40 @@ class ConfidenceRouter:
         #      action="escalate", priority="high",
         #      requires_human=True, reason="Low confidence — escalating"
 
+        if action_type in HIGH_RISK_ACTIONS:
+            return RoutingDecision(
+                action="escalate",
+                confidence=confidence,
+                reason=f"High-risk action: {action_type}",
+                priority="high",
+                requires_human=True,
+            )
+
+        if confidence >= self.HIGH_THRESHOLD:
+            return RoutingDecision(
+                action="auto_send",
+                confidence=confidence,
+                reason="High confidence and low-risk action",
+                priority="low",
+                requires_human=False,
+            )
+
+        if confidence >= self.MEDIUM_THRESHOLD:
+            return RoutingDecision(
+                action="queue_review",
+                confidence=confidence,
+                reason="Medium confidence; human review reduces false answers",
+                priority="normal",
+                requires_human=True,
+            )
+
         return RoutingDecision(
-            action="auto_send",
+            action="escalate",
             confidence=confidence,
-            reason="TODO: implement routing logic",
-            priority="low",
-            requires_human=False,
-        )  # TODO: Replace with implementation
+            reason="Low confidence; immediate human escalation required",
+            priority="high",
+            requires_human=True,
+        )
 
 
 # ============================================================
@@ -109,27 +136,27 @@ class ConfidenceRouter:
 hitl_decision_points = [
     {
         "id": 1,
-        "name": "TODO: Name this decision point",
-        "trigger": "TODO: When does this trigger?",
-        "hitl_model": "TODO: human-in-the-loop / human-on-the-loop / human-as-tiebreaker",
-        "context_needed": "TODO: What does the reviewer need to see?",
-        "example": "TODO: Give a concrete example scenario",
+        "name": "High-value transfer approval",
+        "trigger": "Transfer amount exceeds 50,000,000 VND, new beneficiary, or unusual device/location.",
+        "hitl_model": "human-in-the-loop",
+        "context_needed": "Customer verification status, account balance, beneficiary history, device risk, recent fraud alerts.",
+        "example": "A customer asks the assistant to transfer 120,000,000 VND to a new account at midnight.",
     },
     {
         "id": 2,
-        "name": "TODO: Name this decision point",
-        "trigger": "TODO: When does this trigger?",
-        "hitl_model": "TODO: human-in-the-loop / human-on-the-loop / human-as-tiebreaker",
-        "context_needed": "TODO: What does the reviewer need to see?",
-        "example": "TODO: Give a concrete example scenario",
+        "name": "Credential or profile change",
+        "trigger": "Password reset, phone number change, email change, or personal data update requested.",
+        "hitl_model": "human-as-tiebreaker",
+        "context_needed": "KYC record, recent login history, OTP result, fraud score, and previous support tickets.",
+        "example": "A user logs in from a new country and asks to change the registered phone number.",
     },
     {
         "id": 3,
-        "name": "TODO: Name this decision point",
-        "trigger": "TODO: When does this trigger?",
-        "hitl_model": "TODO: human-in-the-loop / human-on-the-loop / human-as-tiebreaker",
-        "context_needed": "TODO: What does the reviewer need to see?",
-        "example": "TODO: Give a concrete example scenario",
+        "name": "Unsafe or ambiguous AI response",
+        "trigger": "LLM judge safety score is low, output filter redacts secrets, or confidence is below 0.7.",
+        "hitl_model": "human-on-the-loop",
+        "context_needed": "Original user request, generated response, triggered guardrail, judge verdict, and conversation history.",
+        "example": "The assistant drafts an answer that includes a redacted internal host while answering a support request.",
     },
 ]
 

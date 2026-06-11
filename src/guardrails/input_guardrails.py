@@ -5,6 +5,11 @@ Lab 11 — Part 2A: Input Guardrails
   TODO 5: Input Guardrail Plugin (ADK)
 """
 import re
+import sys
+from pathlib import Path
+
+if __package__ in (None, ""):
+    sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
 from google.genai import types
 from google.adk.plugins import base_plugin
@@ -38,9 +43,22 @@ def detect_injection(user_input: str) -> bool:
         True if injection detected, False otherwise
     """
     INJECTION_PATTERNS = [
-        # TODO: Add at least 5 regex patterns
-        # Example:
-        # r"ignore (all )?(previous|above) instructions",
+        r"\b(ignore|forget|disregard|override)\b.*\b(previous|above|prior|system|developer)\b.*\binstructions?\b",
+        r"\byou are now\b|\bact as\b|\bpretend (to be|you are)\b",
+        r"\b(system|developer|hidden)\s+(prompt|instruction|message|note)s?\b",
+        r"\breveal\b.*\b(prompt|instruction|password|api key|secret|credential)s?\b",
+        r"\b(DAN|jailbreak|unrestricted|no restrictions|bypass safety)\b",
+        r"\b(output|convert|translate|encode|reformat)\b.*\b(system prompt|instructions?|config|secret)s?\b",
+        r"\bfill in\b.*\b(password|api key|database|connection string|secret)s?\b",
+        r"\bconfirm\b.*\b(password|api key|credential|secret)s?\b",
+        r"\b(internal wiki|system instructions?|internal notes?|system configuration|full system)\b",
+        r"\b(credentials?|connection strings?|environment variables?|db endpoint|database endpoint)\b",
+        r"\b(CISO|compliance audit|GDPR|SEC-\d+|network audit|firewall rules)\b",
+        r"\b(training exercise|unsafe response|bad example|what to watch for)\b.*\b(credentials?|password|api key|secret)s?\b",
+        r"\b(production environment|migration tool|same passwords as you|old password|rotated credentials)\b",
+        r"\.internal\b",
+        r"\b(bỏ qua|bo qua|lờ đi|lo di)\b.*\b(hướng dẫn|huong dan|chỉ dẫn|chi dan)\b",
+        r"\b(mật khẩu|mat khau|api key|system prompt|tiết lộ|tiet lo)\b",
     ]
 
     for pattern in INJECTION_PATTERNS:
@@ -70,12 +88,16 @@ def topic_filter(user_input: str) -> bool:
     """
     input_lower = user_input.lower()
 
-    # TODO: Implement logic:
-    # 1. If input contains any blocked topic -> return True
-    # 2. If input doesn't contain any allowed topic -> return True
-    # 3. Otherwise -> return False (allow)
+    if not input_lower.strip():
+        return True
 
-    pass  # Replace with your implementation
+    if any(topic in input_lower for topic in BLOCKED_TOPICS):
+        return True
+
+    if not any(topic in input_lower for topic in ALLOWED_TOPICS):
+        return True
+
+    return False
 
 
 # ============================================================
@@ -128,14 +150,19 @@ class InputGuardrailPlugin(base_plugin.BasePlugin):
         self.total_count += 1
         text = self._extract_text(user_message)
 
-        # TODO: Implement logic:
-        # 1. Call detect_injection(text)
-        #    - If True: increment blocked_count, return self._block_response("...")
-        # 2. Call topic_filter(text)
-        #    - If True: increment blocked_count, return self._block_response("...")
-        # 3. If both are False: return None (let message through)
+        if detect_injection(text):
+            self.blocked_count += 1
+            return self._block_response(
+                "I cannot process requests that try to override instructions or reveal internal information."
+            )
 
-        pass  # Replace with your implementation
+        if topic_filter(text):
+            self.blocked_count += 1
+            return self._block_response(
+                "I can only help with VinBank banking topics such as accounts, transfers, loans, savings, and cards."
+            )
+
+        return None
 
 
 # ============================================================

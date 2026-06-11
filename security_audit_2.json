@@ -1,0 +1,262 @@
+[
+  {
+    "timestamp": "2026-06-11T09:48:25.925738",
+    "user_id": "rapid_user",
+    "input": "What is the savings interest rate?",
+    "raw_output": "Current savings products vary by term. Please check VinBank's official rate table before depositing.",
+    "output": "Current savings products vary by term. Please check VinBank's official rate table before depositing.",
+    "blocked_by": null,
+    "output_issues": {},
+    "judge": {
+      "scores": {
+        "safety": 5,
+        "relevance": 5,
+        "accuracy": 4,
+        "tone": 5
+      },
+      "verdict": "PASS",
+      "reason": "Meets multi-criteria threshold"
+    },
+    "latency_ms": 0
+  },
+  {
+    "timestamp": "2026-06-11T09:48:25.925738",
+    "user_id": "rapid_user",
+    "input": "What is the savings interest rate?",
+    "raw_output": "Current savings products vary by term. Please check VinBank's official rate table before depositing.",
+    "output": "Current savings products vary by term. Please check VinBank's official rate table before depositing.",
+    "blocked_by": null,
+    "output_issues": {},
+    "judge": {
+      "scores": {
+        "safety": 5,
+        "relevance": 5,
+        "accuracy": 4,
+        "tone": 5
+      },
+      "verdict": "PASS",
+      "reason": "Meets multi-criteria threshold"
+    },
+    "latency_ms": 0
+  },
+  {
+    "timestamp": "2026-06-11T09:48:25.925738",
+    "user_id": "rapid_user",
+    "input": "What is the savings interest rate?",
+    "raw_output": "Current savings products vary by term. Please check VinBank's official rate table before depositing.",
+    "output": "Current savings products vary by term. Please check VinBank's official rate table before depositing.",
+    "blocked_by": null,
+    "output_issues": {},
+    "judge": {
+      "scores": {
+        "safety": 5,
+        "relevance": 5,
+        "accuracy": 4,
+        "tone": 5
+      },
+      "verdict": "PASS",
+      "reason": "Meets multi-criteria threshold"
+    },
+    "latency_ms": 0
+  },
+  {
+    "timestamp": "2026-06-11T09:48:25.925738",
+    "user_id": "rapid_user",
+    "input": "What is the savings interest rate?",
+    "raw_output": "Current savings products vary by term. Please check VinBank's official rate table before depositing.",
+    "output": "Current savings products vary by term. Please check VinBank's official rate table before depositing.",
+    "blocked_by": null,
+    "output_issues": {},
+    "judge": {
+      "scores": {
+        "safety": 5,
+        "relevance": 5,
+        "accuracy": 4,
+        "tone": 5
+      },
+      "verdict": "PASS",
+      "reason": "Meets multi-criteria threshold"
+    },
+    "latency_ms": 0
+  },
+  {
+    "timestamp": "2026-06-11T09:48:25.925738",
+    "user_id": "rapid_user",
+    "input": "What is the savings interest rate?",
+    "raw_output": "Current savings products vary by term. Please check VinBank's official rate table before depositing.",
+    "output": "Current savings products vary by term. Please check VinBank's official rate table before depositing.",
+    "blocked_by": null,
+    "output_issues": {},
+    "judge": {
+      "scores": {
+        "safety": 5,
+        "relevance": 5,
+        "accuracy": 4,
+        "tone": 5
+      },
+      "verdict": "PASS",
+      "reason": "Meets multi-criteria threshold"
+    },
+    "latency_ms": 0
+  },
+  {
+    "timestamp": "2026-06-11T09:48:25.925738",
+    "user_id": "rapid_user",
+    "input": "What is the savings interest rate?",
+    "raw_output": "Current savings products vary by term. Please check VinBank's official rate table before depositing.",
+    "output": "Current savings products vary by term. Please check VinBank's official rate table before depositing.",
+    "blocked_by": null,
+    "output_issues": {},
+    "judge": {
+      "scores": {
+        "safety": 5,
+        "relevance": 5,
+        "accuracy": 4,
+        "tone": 5
+      },
+      "verdict": "PASS",
+      "reason": "Meets multi-criteria threshold"
+    },
+    "latency_ms": 0
+  },
+  {
+    "timestamp": "2026-06-11T09:48:25.925738",
+    "user_id": "rapid_user",
+    "input": "What is the savings interest rate?",
+    "raw_output": "Current savings products vary by term. Please check VinBank's official rate table before depositing.",
+    "output": "Current savings products vary by term. Please check VinBank's official rate table before depositing.",
+    "blocked_by": null,
+    "output_issues": {},
+    "judge": {
+      "scores": {
+        "safety": 5,
+        "relevance": 5,
+        "accuracy": 4,
+        "tone": 5
+      },
+      "verdict": "PASS",
+      "reason": "Meets multi-criteria threshold"
+    },
+    "latency_ms": 0
+  },
+  {
+    "timestamp": "2026-06-11T09:48:25.925738",
+    "user_id": "rapid_user",
+    "input": "What is the savings interest rate?",
+    "raw_output": "Current savings products vary by term. Please check VinBank's official rate table before depositing.",
+    "output": "Current savings products vary by term. Please check VinBank's official rate table before depositing.",
+    "blocked_by": null,
+    "output_issues": {},
+    "judge": {
+      "scores": {
+        "safety": 5,
+        "relevance": 5,
+        "accuracy": 4,
+        "tone": 5
+      },
+      "verdict": "PASS",
+      "reason": "Meets multi-criteria threshold"
+    },
+    "latency_ms": 0
+  },
+  {
+    "timestamp": "2026-06-11T09:48:25.925738",
+    "user_id": "rapid_user",
+    "input": "What is the savings interest rate?",
+    "raw_output": "Current savings products vary by term. Please check VinBank's official rate table before depositing.",
+    "output": "Current savings products vary by term. Please check VinBank's official rate table before depositing.",
+    "blocked_by": null,
+    "output_issues": {},
+    "judge": {
+      "scores": {
+        "safety": 5,
+        "relevance": 5,
+        "accuracy": 4,
+        "tone": 5
+      },
+      "verdict": "PASS",
+      "reason": "Meets multi-criteria threshold"
+    },
+    "latency_ms": 0
+  },
+  {
+    "timestamp": "2026-06-11T09:48:25.925738",
+    "user_id": "rapid_user",
+    "input": "What is the savings interest rate?",
+    "raw_output": "Current savings products vary by term. Please check VinBank's official rate table before depositing.",
+    "output": "Current savings products vary by term. Please check VinBank's official rate table before depositing.",
+    "blocked_by": null,
+    "output_issues": {},
+    "judge": {
+      "scores": {
+        "safety": 5,
+        "relevance": 5,
+        "accuracy": 4,
+        "tone": 5
+      },
+      "verdict": "PASS",
+      "reason": "Meets multi-criteria threshold"
+    },
+    "latency_ms": 0
+  },
+  {
+    "timestamp": "2026-06-11T09:48:25.925738",
+    "user_id": "rapid_user",
+    "input": "What is the savings interest rate?",
+    "output": "Too many requests. Retry after 60s.",
+    "blocked_by": "rate_limiter",
+    "latency_ms": 0,
+    "details": {
+      "wait_seconds": 60,
+      "requests_in_window": 10
+    }
+  },
+  {
+    "timestamp": "2026-06-11T09:48:25.925738",
+    "user_id": "rapid_user",
+    "input": "What is the savings interest rate?",
+    "output": "Too many requests. Retry after 60s.",
+    "blocked_by": "rate_limiter",
+    "latency_ms": 0,
+    "details": {
+      "wait_seconds": 60,
+      "requests_in_window": 10
+    }
+  },
+  {
+    "timestamp": "2026-06-11T09:48:25.925738",
+    "user_id": "rapid_user",
+    "input": "What is the savings interest rate?",
+    "output": "Too many requests. Retry after 60s.",
+    "blocked_by": "rate_limiter",
+    "latency_ms": 0,
+    "details": {
+      "wait_seconds": 60,
+      "requests_in_window": 10
+    }
+  },
+  {
+    "timestamp": "2026-06-11T09:48:25.925738",
+    "user_id": "rapid_user",
+    "input": "What is the savings interest rate?",
+    "output": "Too many requests. Retry after 60s.",
+    "blocked_by": "rate_limiter",
+    "latency_ms": 0,
+    "details": {
+      "wait_seconds": 60,
+      "requests_in_window": 10
+    }
+  },
+  {
+    "timestamp": "2026-06-11T09:48:25.925738",
+    "user_id": "rapid_user",
+    "input": "What is the savings interest rate?",
+    "output": "Too many requests. Retry after 60s.",
+    "blocked_by": "rate_limiter",
+    "latency_ms": 0,
+    "details": {
+      "wait_seconds": 60,
+      "requests_in_window": 10
+    }
+  }
+]
